@@ -13,7 +13,7 @@
         <!--ToDo App-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Todo_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="Todo_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,6 +46,7 @@
                     <connections>
                         <outlet property="tableView1" destination="wdR-wm-yZR" id="caz-ry-84N"/>
                         <segue destination="BT5-kz-l3b" kind="show" identifier="addSegue" id="jfB-HC-WtA"/>
+                        <segue destination="0qe-19-CxQ" kind="show" identifier="selectTaskSegue" id="crc-L4-1AX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,6 +118,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axp-AY-BXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1817" y="125"/>
+        </scene>
+        <!--Complete Task View Controller-->
+        <scene sceneID="Yyn-92-5qp">
+            <objects>
+                <viewController id="0qe-19-CxQ" customClass="CompleteTaskViewController" customModule="Todo_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xcJ-dq-0sJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="u2f-dP-Ytl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5HS-1W-Of6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-Fu-ss2">
+                                <rect key="frame" x="156.5" y="84" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLI-QX-lEF">
+                                <rect key="frame" x="153.5" y="139" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTask:" destination="0qe-19-CxQ" eventType="touchUpInside" id="0PV-eR-O5K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VLI-QX-lEF" firstAttribute="top" secondItem="6hx-Fu-ss2" secondAttribute="bottom" constant="25" id="3nS-B8-gyH"/>
+                            <constraint firstItem="6hx-Fu-ss2" firstAttribute="centerX" secondItem="5HS-1W-Of6" secondAttribute="centerX" id="KZp-ub-hLs"/>
+                            <constraint firstItem="6hx-Fu-ss2" firstAttribute="top" secondItem="xcJ-dq-0sJ" secondAttribute="bottom" constant="20" id="KkJ-16-7C4"/>
+                            <constraint firstItem="VLI-QX-lEF" firstAttribute="centerX" secondItem="5HS-1W-Of6" secondAttribute="centerX" id="aLg-Xl-nsd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="6hx-Fu-ss2" id="VU3-UW-1RL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CS-4C-luy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IeP-pq-gfi">
